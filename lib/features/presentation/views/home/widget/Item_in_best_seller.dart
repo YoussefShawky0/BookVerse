@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/constants/font.dart';
 import 'package:flutter/material.dart';
 
 class ItemInBestSeller extends StatelessWidget {
@@ -36,13 +37,24 @@ class ItemInBestSeller extends StatelessWidget {
                   const SizedBox(height: 15),
                   // Book Title and Author
                   const Text(
-                    'Best Seller Book Title',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    'Best Seller Book Title Goes Here Book Title Goes Here',
+                    maxLines: 2,
+                    style: TextStyle(
+                      fontFamily: FontConstants.kGtSectraBook,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                   const SizedBox(height: 5),
                   const Text(
+                    maxLines: 1,
                     'Author Name',
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.grey,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                   const SizedBox(height: 10),
                   // Price and Favorite
