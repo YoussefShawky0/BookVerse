@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
+// import 'package:go_router/go_router.dart';
 
-class ItemInListView extends StatelessWidget {
-  const ItemInListView({super.key});
+class MainImageInDetail extends StatelessWidget {
+  const MainImageInDetail({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        // GoRouter.of(context).push('/bookDetails');
+      },
       child: Padding(
-        padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+        padding: EdgeInsets.symmetric(
+          horizontal: size.width * 0.05,
+          vertical: size.height * 0.02,
+        ),
         child: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.25,
+          height: MediaQuery.of(context).size.height * 0.35,
+          width: MediaQuery.of(context).size.width * 0.48,
           child: AspectRatio(
-            aspectRatio: 2 / 2.7,
+            aspectRatio: 2 / 2.55,
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadiusDirectional.vertical(

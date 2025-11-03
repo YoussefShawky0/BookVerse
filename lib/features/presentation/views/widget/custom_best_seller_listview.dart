@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/presentation/views/home/widget/Item_in_best_seller.dart';
+import 'package:bookly_app/features/presentation/views/widget/Item_in_best_seller.dart';
 import 'package:flutter/material.dart';
 
 class CustomBestSellerListView extends StatelessWidget {
@@ -8,7 +8,7 @@ class CustomBestSellerListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      physics: const BouncingScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: 10,
       itemBuilder: (context, index) {
         return const ItemInBestSeller();
