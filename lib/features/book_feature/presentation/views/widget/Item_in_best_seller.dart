@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/constants/font.dart';
-import 'package:bookly_app/features/presentation/views/widget/book_rating.dart';
+import 'package:bookly_app/features/book_feature/presentation/views/widget/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

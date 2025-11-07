@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/presentation/views/widget/book_rating.dart';
+import 'package:bookly_app/features/book_feature/presentation/views/widget/book_rating.dart';
 import 'package:flutter/material.dart';
 
 class TextInDetail extends StatelessWidget {
