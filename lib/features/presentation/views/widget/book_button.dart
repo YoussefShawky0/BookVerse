@@ -26,7 +26,7 @@ class BookButton extends StatelessWidget {
               child: const Text(
                 '19.99\$',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 18,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
@@ -49,9 +49,9 @@ class BookButton extends StatelessWidget {
               child: const Text(
                 'Free Preview',
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 16,
                   color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w900,
                 ),
               ),
             ),

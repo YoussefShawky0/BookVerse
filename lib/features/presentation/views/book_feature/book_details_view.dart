@@ -29,7 +29,7 @@ class BookDetailsView extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10),
-            SizedBox(height: 190, child: SimilarBooksListView()),
+            Expanded(child: SimilarBooksListView()),
           ],
         ),
       ),

@@ -14,7 +14,7 @@ class MainImageInDetail extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: size.width * 0.05,
-          vertical: size.height * 0.02,
+          vertical: size.height * 0.0,
         ),
         child: SizedBox(
           height: MediaQuery.of(context).size.height * 0.35,

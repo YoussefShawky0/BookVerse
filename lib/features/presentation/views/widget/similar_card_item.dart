@@ -14,7 +14,7 @@ class SimilarCardItem extends StatelessWidget {
         child: SizedBox(
           height: MediaQuery.of(context).size.height * 0.03,
           child: AspectRatio(
-            aspectRatio: 2 / 2.7,
+            aspectRatio: 2 / 3.0,
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadiusDirectional.vertical(
