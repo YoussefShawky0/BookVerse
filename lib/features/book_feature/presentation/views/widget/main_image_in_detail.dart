@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 // import 'package:go_router/go_router.dart';
 
 class MainImageInDetail extends StatelessWidget {
-  const MainImageInDetail({super.key});
+  const MainImageInDetail({super.key, required this.imageUrl});
 
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;

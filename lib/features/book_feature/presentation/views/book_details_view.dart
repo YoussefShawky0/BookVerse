@@ -17,7 +17,9 @@ class BookDetailsView extends StatelessWidget {
           children: [
             // Custom App Bar
             CustomBookDetailsAppBar(),
-            MainImageInDetail(),
+            MainImageInDetail(
+              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIwGRkYl8_l5YTNjHBqCOrFhXVYvdXqOUzag&s',
+            ),
             TextInDetail(),
             BookButton(),
             SizedBox(height: 20),
