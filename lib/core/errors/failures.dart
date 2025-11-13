@@ -72,10 +72,11 @@ class ServerFailure extends Failure {
 
 // For local cache/database errors
 class CacheFailure extends Failure {
-  CacheFailure(String errorMessage) : super(errorMessage);
+  CacheFailure(super.errorMessage);
 }
 
 // For network-specific errors
 class NetworkFailure extends Failure {
-  NetworkFailure(String errorMessage) : super(errorMessage);
+  NetworkFailure(super.errorMessage);
+  
 }

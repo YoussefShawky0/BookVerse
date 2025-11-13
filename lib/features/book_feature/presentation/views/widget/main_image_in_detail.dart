@@ -1,13 +1,29 @@
+import 'package:bookly_app/features/book_feature/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 // import 'package:go_router/go_router.dart';
 
 class MainImageInDetail extends StatelessWidget {
-  const MainImageInDetail({super.key, required this.imageUrl});
+  const MainImageInDetail({super.key, required this.bookModel});
 
-  final String imageUrl;
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+
+    var imageUrl =
+        bookModel.volumeInfo.imageLinks?.thumbnail ??
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIwGRkYl8_l5YTNjHBqCOrFhXVYvdXqOUzag&s';
+
+    // Replace http with https for secure connection
+    if (imageUrl.startsWith('http:')) {
+      imageUrl = imageUrl.replaceFirst('http:', 'https:');
+    }
+
+    // For web, use CORS proxy to avoid CORS issues
+    if (imageUrl.contains('books.google.com')) {
+      imageUrl = 'https://corsproxy.io/?${Uri.encodeComponent(imageUrl)}';
+    }
+
     return GestureDetector(
       onTap: () {
         // GoRouter.of(context).push('/bookDetails');
@@ -29,9 +45,7 @@ class MainImageInDetail extends StatelessWidget {
                   bottom: Radius.circular(25),
                 ),
                 image: DecorationImage(
-                  image: NetworkImage(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIwGRkYl8_l5YTNjHBqCOrFhXVYvdXqOUzag&s',
-                  ),
+                  image: NetworkImage(imageUrl),
                   fit: BoxFit.cover,
                 ),
               ),

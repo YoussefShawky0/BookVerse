@@ -8,7 +8,11 @@ class CustomErrorWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(errorMessage, style: const TextStyle(fontSize: 18)),
+        child: Text(
+          errorMessage,
+          style: const TextStyle(fontSize: 18),
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }

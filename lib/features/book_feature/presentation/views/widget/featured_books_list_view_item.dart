@@ -33,7 +33,7 @@ class FeaturedBooksListViewItem extends StatelessWidget {
                 // For web, use CORS proxy to avoid CORS issues
                 // This is only needed for web - mobile/desktop work fine
                 if (imageUrl.contains('books.google.com')) {
-                  imageUrl = 'https://corsproxy.io/?' + Uri.encodeComponent(imageUrl);
+                  imageUrl = 'https://corsproxy.io/?${Uri.encodeComponent(imageUrl)}';
                 }
 
                 return GestureDetector(
