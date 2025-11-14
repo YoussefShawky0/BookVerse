@@ -1,5 +1,5 @@
-// import 'package:bookly_app/features/book_feature/presentation/views/widget/item_in_best_seller.dart';
 import 'package:bookly_app/features/search/presentation/views/widgets/custom_search_text_field.dart';
+import 'package:bookly_app/features/search/presentation/views/widgets/search_results_list.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -35,25 +35,6 @@ class SearchViewBody extends StatelessWidget {
           const Expanded(child: SearchResultsList()),
         ],
       ),
-    );
-  }
-}
-
-class SearchResultsList extends StatelessWidget {
-  const SearchResultsList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        // return const ItemInBestSeller();
-        return const Text(
-          'Search Result Item',
-          style: TextStyle(fontSize: 18),
-        );
-      },
     );
   }
 }

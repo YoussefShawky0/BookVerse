@@ -11,17 +11,11 @@ class ItemInBestSeller extends StatelessWidget {
   Widget build(BuildContext context) {
     var imageUrl =
         book.volumeInfo.imageLinks?.thumbnail ??
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIwGRkYl8_l5YTNjHBqCOrFhXVYvdXqOUzag&s';
+        'https://via.placeholder.com/150x200.png?text=No+Cover';
 
     // Replace http with https for secure connection
     if (imageUrl.startsWith('http:')) {
       imageUrl = imageUrl.replaceFirst('http:', 'https:');
-    }
-
-    // For web, use CORS proxy to avoid CORS issues
-    // This is only needed for web - mobile/desktop work fine
-    if (imageUrl.contains('books.google.com')) {
-      imageUrl = 'https://corsproxy.io/?${Uri.encodeComponent(imageUrl)}';
     }
 
     return GestureDetector(
@@ -57,7 +51,7 @@ class ItemInBestSeller extends StatelessWidget {
                     const SizedBox(height: 15),
                     // Book Title and Author
                     Text(
-                      book.volumeInfo.title!,
+                      book.volumeInfo.title ?? 'Unknown Title',
                       maxLines: 2,
                       style: const TextStyle(
                         fontFamily: FontConstants.kGtSectraBook,
@@ -68,7 +62,7 @@ class ItemInBestSeller extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      book.volumeInfo.authors!.join(', '),
+                      book.volumeInfo.authors?.join(', ') ?? 'Unknown Author',
                       maxLines: 1,
                       style: TextStyle(
                         fontSize: 14,
@@ -89,7 +83,7 @@ class ItemInBestSeller extends StatelessWidget {
                         ),
                         const Spacer(),
                         BookRating(
-                          publishedDate: book.volumeInfo.publishedDate!,
+                          publishedDate: book.volumeInfo.publishedDate,
                         ),
                       ],
                     ),

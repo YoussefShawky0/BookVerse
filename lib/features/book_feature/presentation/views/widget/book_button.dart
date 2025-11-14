@@ -1,8 +1,11 @@
+import 'package:bookly_app/features/book_feature/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 class BookButton extends StatelessWidget {
-  const BookButton({super.key});
+  const BookButton({super.key, this.onPressed, this.bookM});
 
+  final void Function()? onPressed;
+  final BookModel? bookM;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,9 +25,9 @@ class BookButton extends StatelessWidget {
                   ),
                 ),
               ),
-              onPressed: () {},
+              onPressed: onPressed,
               child: const Text(
-                '19.99\$',
+                'Free',
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.black,
@@ -45,10 +48,10 @@ class BookButton extends StatelessWidget {
                   ),
                 ),
               ),
-              onPressed: () {},
-              child: const Text(
-                'Free Preview',
-                style: TextStyle(
+              onPressed: onPressed,
+              child: Text(
+                getText(bookM!),
+                style: const TextStyle(
                   fontSize: 16,
                   color: Colors.white,
                   fontWeight: FontWeight.w900,
@@ -59,5 +62,13 @@ class BookButton extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String getText(BookModel bookM) {
+    if (bookM.volumeInfo.previewLink == null) {
+      return 'Not Available';
+    } else {
+      return 'Preview';
+    }
   }
 }

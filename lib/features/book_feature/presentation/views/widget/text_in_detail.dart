@@ -14,7 +14,7 @@ class TextInDetail extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            bookModel.volumeInfo.title!,
+            bookModel.volumeInfo.title ?? 'Unknown Title',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 22,
@@ -24,7 +24,7 @@ class TextInDetail extends StatelessWidget {
           ),
           SizedBox(height: 5),
           Text(
-            bookModel.volumeInfo.authors!.join(', '),
+            bookModel.volumeInfo.authors?.join(', ') ?? 'Unknown Author',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 18, color: Colors.grey),
           ),

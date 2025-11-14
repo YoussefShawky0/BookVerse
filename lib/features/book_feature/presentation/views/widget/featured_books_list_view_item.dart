@@ -23,17 +23,11 @@ class FeaturedBooksListViewItem extends StatelessWidget {
                 var book = state.books[index];
                 var imageUrl =
                     book.volumeInfo.imageLinks?.thumbnail ??
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIwGRkYl8_l5YTNjHBqCOrFhXVYvdXqOUzag&s';
+                    'https://via.placeholder.com/150x200.png?text=No+Cover';
 
                 // Replace http with https for secure connection
                 if (imageUrl.startsWith('http:')) {
                   imageUrl = imageUrl.replaceFirst('http:', 'https:');
-                }
-                
-                // For web, use CORS proxy to avoid CORS issues
-                // This is only needed for web - mobile/desktop work fine
-                if (imageUrl.contains('books.google.com')) {
-                  imageUrl = 'https://corsproxy.io/?${Uri.encodeComponent(imageUrl)}';
                 }
 
                 return GestureDetector(

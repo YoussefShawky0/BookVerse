@@ -11,14 +11,14 @@ class BestSellerList extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text(
+        children: [
+          const Text(
             'Newest Books',
             textAlign: TextAlign.left,
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 10),
-          CustomBestSellerListView(),
+          const SizedBox(height: 10),
+          const CustomBestSellerListView(),
           // Add more widgets for the best seller list here
         ],
       ),
