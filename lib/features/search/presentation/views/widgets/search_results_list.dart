@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/widgets/best_seller_shimmer.dart';
 import 'package:bookly_app/core/utils/widgets/custom_error_widget.dart';
 import 'package:bookly_app/features/book_feature/presentation/views/widget/item_in_best_seller.dart';
 import 'package:bookly_app/features/search/presentation/manager/search_cubit/search_cubit.dart';
@@ -29,7 +30,7 @@ class SearchResultsList extends StatelessWidget {
         } else if (state is SearchFailure) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else if (state is SearchLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const BestSellerShimmer();
         } else {
           return const Center(
             child: Text(

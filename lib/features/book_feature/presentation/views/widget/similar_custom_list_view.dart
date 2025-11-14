@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/widgets/custom_error_widget.dart';
+import 'package:bookly_app/core/utils/widgets/similar_books_shimmer.dart';
 import 'package:bookly_app/features/book_feature/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bookly_app/features/book_feature/presentation/views/widget/similar_card_item.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class SimilarBooksListView extends StatelessWidget {
         } else if (state is SimilarBooksFailure) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return const SimilarBooksShimmer();
         }
       },
     );

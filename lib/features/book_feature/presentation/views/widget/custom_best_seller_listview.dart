@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/widgets/best_seller_shimmer.dart';
 import 'package:bookly_app/core/utils/widgets/custom_error_widget.dart';
 import 'package:bookly_app/features/book_feature/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly_app/features/book_feature/presentation/views/widget/item_in_best_seller.dart';
@@ -12,21 +13,19 @@ class CustomBestSellerListView extends StatelessWidget {
     return BlocBuilder<NewestBooksCubit, NewestBooksState>(
       builder: (context, state) {
         if (state is NewestBooksSuccess) {
-  return ListView.builder(
-    shrinkWrap: true,
-    physics: const NeverScrollableScrollPhysics(),
-    itemCount: state.books.length,
-    itemBuilder: (context, index) {
-      return ItemInBestSeller(book: state.books[index]);
-      
-    },
-  );
-}else if (state is NewestBooksFailure) {
+          return ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: state.books.length,
+            itemBuilder: (context, index) {
+              return ItemInBestSeller(book: state.books[index]);
+            },
+          );
+        } else if (state is NewestBooksFailure) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
-      }
-      else {
-      return const Center(child: CircularProgressIndicator());
-      }
+        } else {
+          return const BestSellerShimmer();
+        }
       },
     );
   }
